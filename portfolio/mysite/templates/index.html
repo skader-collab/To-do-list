@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <h1>Welcome, {{ user.username }}!</h1>
+    <p>This is your personal dashboard.</p>
+{% else %}
+    <h1>Welcome to My Site!</h1>
+    <p>Please log in to access your dashboard.</p>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'signup' %}">Sign Up</a>
+{% endif %}
+{% endblock %}
+
+
